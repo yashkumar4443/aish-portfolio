@@ -39,6 +39,7 @@ export const Title = styled.div`
 `;
 
 export const Desc = styled.div`
+  font-style: italic;
   font-size: 18px;
   text-align: center;
   max-width: 600px;
@@ -119,7 +120,6 @@ const SkillItem = styled.div`
 `
 
 const SkillImage = styled.img`
-  width: 24px;
   height: 24px;
 `
 
@@ -129,7 +129,7 @@ const Skills = () => {
     <Container id="skills">
       <Wrapper>
         <Title>Skills</Title>
-        <Desc>Here are some of my skills on which I have been working on for the past 3 years.
+        <Desc>Here are some of my skills on which I have been working on for the past years.
         </Desc>
         <SkillsContainer>
           {skills.map((skill) => (

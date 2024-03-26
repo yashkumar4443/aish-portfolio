@@ -26,11 +26,11 @@ const Navbar = () => {
           <NavLink href="#about">About</NavLink>
           <NavLink href='#skills'>Skills</NavLink>
           <NavLink href='#experience'>Experience</NavLink>
-          <NavLink href='#projects'>Projects</NavLink>
+          {/* <NavLink href='#projects'>Projects</NavLink> */}
           <NavLink href='#education'>Education</NavLink>
         </NavItems>
         <ButtonContainer>
-          <GitHubButton href="https://github.com/yashkumar4443" target="_blank">Github Profile</GitHubButton>
+          <GitHubButton href="tel:+91-9430472681" target="_blank">Contact me</GitHubButton>
         </ButtonContainer>
         {
           isOpen &&
@@ -44,13 +44,13 @@ const Navbar = () => {
             <MobileLink href='#experience' onClick={() => {
               setIsOpen(!isOpen)
             }}>Experience</MobileLink>
-            <MobileLink href='#projects' onClick={() => {
+            {/* <MobileLink href='#projects' onClick={() => {
               setIsOpen(!isOpen)
-            }}>Projects</MobileLink>
+            }}>Projects</MobileLink> */}
             <MobileLink href='#education' onClick={() => {
               setIsOpen(!isOpen)
             }}>Education</MobileLink>
-            <GitHubButton style={{padding: '10px 16px',background: `${theme.primary}`, color: 'white',width: 'max-content'}} href={Bio.github} target="_blank">Github Profile</GitHubButton>
+            <GitHubButton style={{padding: '10px 16px',background: `${theme.primary}`, color: 'white',width: 'max-content'}} href={Bio.github} target="_blank">Contact me</GitHubButton>
           </MobileMenu>
         }
       </NavbarContainer>

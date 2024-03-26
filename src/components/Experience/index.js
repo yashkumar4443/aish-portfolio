@@ -1,6 +1,5 @@
-
-import React from 'react'
-import styled from 'styled-components'
+import React from 'react';
+import styled from 'styled-components';
 import Timeline from '@mui/lab/Timeline';
 import TimelineItem from '@mui/lab/TimelineItem';
 import TimelineSeparator from '@mui/lab/TimelineSeparator';
@@ -39,18 +38,19 @@ const Wrapper = styled.div`
 `;
 
 const Title = styled.div`
-font-size: 42px;
-text-align: center;
-font-weight: 600;
-margin-top: 20px;
-  color: ${({ theme }) => theme.text_primary};
-  @media (max-width: 768px) {
-      margin-top: 12px;
-      font-size: 32px;
-  }
+    font-size: 42px;
+    text-align: center;
+    font-weight: 600;
+    margin-top: 20px;
+    color: ${({ theme }) => theme.text_primary};
+    @media (max-width: 768px) {
+        margin-top: 12px;
+        font-size: 32px;
+    }
 `;
 
 const Desc = styled.div`
+    font-style: italic;
     font-size: 18px;
     text-align: center;
     max-width: 600px;
@@ -72,35 +72,44 @@ const TimelineSection = styled.div`
     gap: 12px;
 `;
 
+const SectionTitle = styled.h3`
+    font-size: 42px;
+    text-align: center;
+    margin: 50px;
+    color: ${({ theme }) => theme.text_primary};
+`;
 
-
-const index = () => {
+const Index = () => {
     return (
         <Container id="experience">
             <Wrapper>
                 <Title>Experience</Title>
                 <Desc>
-                    My work experience as a software engineer and working on different companies and projects.
+                    “Any fool can know. The point is to understand” by Albert Einstein
                 </Desc>
                 <TimelineSection>
                     <Timeline>
-                        {experiences.map((experience,index) => (
-                            <TimelineItem>
-                                <TimelineSeparator>
-                                    <TimelineDot variant="outlined" color="secondary" />
-                                    {index !== experiences.length - 1 && <TimelineConnector style={{ background: '#854CE6' }} />}
-                                </TimelineSeparator>
-                                <TimelineContent sx={{ py: '12px', px: 2 }}>
-                                    <ExperienceCard experience={experience}/>
-                                </TimelineContent>
-                            </TimelineItem>
+                        {experiences.map((experience, index) => (
+                            <React.Fragment key={experience.id}>
+                                {experience.label && (
+                                    <SectionTitle key={`section-${experience.id}`}>{experience.label}</SectionTitle>
+                                )}
+                                <TimelineItem>
+                                    <TimelineSeparator>
+                                        <TimelineDot variant="outlined" color="secondary" />
+                                        {index !== experiences.length - 1 && <TimelineConnector style={{ background: '#854CE6' }} />}
+                                    </TimelineSeparator>
+                                    <TimelineContent sx={{ py: '12px', px: 2 }}>
+                                        <ExperienceCard experience={experience} />
+                                    </TimelineContent>
+                                </TimelineItem>
+                            </React.Fragment>
                         ))}
                     </Timeline>
-
                 </TimelineSection>
             </Wrapper>
         </Container>
-    )
-}
+    );
+};
 
-export default index
+export default Index;

@@ -1,10 +1,12 @@
 import styled from 'styled-components';
 import FacebookIcon from '@mui/icons-material/Facebook';
-import GitHubIcon from '@mui/icons-material/GitHub';
+import PhoneIcon from '@mui/icons-material/Phone';
 import TwitterIcon from '@mui/icons-material/Twitter';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import InstagramIcon from '@mui/icons-material/Instagram';
 import { Bio } from '../../data/constants';
+import GitHubIcon from '@mui/icons-material/GitHub';
+
 
 const FooterContainer = styled.div`
   width: 100%;
@@ -89,21 +91,21 @@ function Footer() {
   return (
     <FooterContainer>
       <FooterWrapper>
-        <Logo>Yash Kumar</Logo>
+        <Logo>Aish Kumar</Logo>
         <Nav>
           <NavLink href="#about">About</NavLink>
           <NavLink href="#skills">Skills</NavLink>
           <NavLink href="#experience">Experience</NavLink>
-          <NavLink href="#projects">Projects</NavLink>
+          {/* <NavLink href="#projects">Projects</NavLink> */}
           <NavLink href="#education">Education</NavLink>
         </Nav>
         <SocialMediaIcons>
-          <SocialMediaIcon href="https://github.com/yashkumar4443" target="display"><GitHubIcon /></SocialMediaIcon>
+          <SocialMediaIcon href="tel:+91-9430472681" target="_blank"><PhoneIcon /></SocialMediaIcon>
           <SocialMediaIcon href={Bio.twitter} target="display"><TwitterIcon /></SocialMediaIcon>
           <SocialMediaIcon href={Bio.linkedin} target="display"><LinkedInIcon /></SocialMediaIcon>
         </SocialMediaIcons>
         <Copyright>
-          &copy; 2024 Yash Kumar. All rights reserved.
+          &copy; 2024 Aish Kumar. All rights reserved.
         </Copyright>
 
       </FooterWrapper>

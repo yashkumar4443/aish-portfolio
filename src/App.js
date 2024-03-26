@@ -14,6 +14,8 @@ import Experience from "./components/Experience";
 import Education from "./components/Education";
 import ProjectDetails from "./components/ProjectDetails";
 import styled from "styled-components";
+import Certifications from "./components/Certifications/index.js";
+import LiveProjects from './components/liveprojects';
 
 const Body = styled.div`
   background-color: ${({ theme }) => theme.bg};
@@ -42,6 +44,8 @@ function App() {
           </Wrapper>
           <Projects openModal={openModal} setOpenModal={setOpenModal} />
           <Wrapper>
+            <LiveProjects /> {/* Add the LiveProjects component here */}
+            <Certifications />
             <Education />
             <Contact />
           </Wrapper>
